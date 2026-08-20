@@ -39,8 +39,8 @@ if(presence){
     reconcile.innerHTML='<strong>Data reconciliation:</strong> the cited DXBinteract Tasmeer Development profile shows 2 under-construction projects, 175 under-construction units and 0 delivered projects/units in its supply overview. Tasmeer Indigo’s own website separately states 500+ apartments and 700K sqft building area. These sources may use different scopes or definitions; the first operational task should be to reconcile them into one approved project master dataset for the website, CRM, portals, broker kits and reporting.';
     claims.insertAdjacentElement('afterend',reconcile);
   }
-  const badge=presence.querySelector('.note-badge');
-  if(badge) badge.textContent='Directional interview assessment — external supply context added';
+  presence.querySelector('.note-badge')?.remove();
+  presence.querySelector('.score-wrap + .warning')?.remove();
 }
 
 const findings=[...document.querySelectorAll('#gaps .finding')];
