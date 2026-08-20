@@ -3,6 +3,8 @@ enhancementStyles.rel='stylesheet';
 enhancementStyles.href='enhancements.css?v=20260820-1723';
 document.head.appendChild(enhancementStyles);
 
+document.querySelector('#overview .eyebrow')?.remove();
+
 const presence=document.querySelector('#presence');
 if(presence){
   const lede=presence.querySelector('.lede');
