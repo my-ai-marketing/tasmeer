@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'qa-output/**'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   visual-qa:
@@ -39,6 +41,18 @@ jobs:
           name: visual-qa
           path: qa-artifacts/
           retention-days: 3
+      - name: Publish QA report
+        if: always()
+        run: |
+          mkdir -p qa-output
+          if [ -f qa-artifacts/report.json ]; then
+            cp qa-artifacts/report.json qa-output/report.json
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add qa-output/report.json
+            git diff --cached --quiet || git commit -m "Store visual QA report [skip ci]"
+            git push
+          fi
       - name: Fail if QA failed
         if: steps.qa.outcome == 'failure'
         run: exit 1
