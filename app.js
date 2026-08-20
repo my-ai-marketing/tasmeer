@@ -171,6 +171,33 @@ function updateSellThrough(){
 [inventoryInput,monthlyBookingsInput,inventoryValueInput].filter(Boolean).forEach(input=>input.addEventListener('input',updateSellThrough));
 updateSellThrough();
 
+/* Keep the CEO market snapshot focused on Tasmeer's immediate JVC primary-market context. */
+const marketSection=document.getElementById('market');
+const marketCards=[...document.querySelectorAll('#market .market-stat-grid .card')];
+if(marketSection&&marketCards.length>=6){
+  const marketLede=marketSection.querySelector('.lede');
+  if(marketLede) marketLede.textContent='For Tasmeer, the most relevant opportunity is JVC developer first-sale demand. This view therefore prioritises JVC primary-market volume, value, growth and competitive supply instead of Dubai-wide headline totals.';
+
+  marketCards[0].innerHTML='<div class="kicker">JVC 2025 / Primary first sale</div><div class="fact-number">12,074</div><div class="fact-label">developer first-sale transactions recorded during 2025</div><div class="verified">Metropolitan market report</div>';
+  marketCards[1].innerHTML='<div class="kicker">JVC 2025 / Primary first sale</div><div class="fact-number">AED 13.172B</div><div class="fact-label">total value of developer first-sale transactions during 2025</div><div class="verified">Metropolitan market report</div>';
+  marketCards[2].innerHTML='<div class="kicker">JVC 2025 / Sales mix</div><div class="fact-number">69%</div><div class="fact-label">approximate share of recorded JVC sales represented by developer first-sale transactions</div><div class="verified">Calculated from Metropolitan report</div>';
+  marketCards[3].innerHTML='<div class="kicker">JVC 2025 / Primary volume</div><div class="fact-number">+2.8%</div><div class="fact-label">year-on-year growth in developer first-sale transaction volume</div><div class="verified">Metropolitan market report</div>';
+  marketCards[4].innerHTML='<div class="kicker">JVC 2025 / Primary value</div><div class="fact-number">+13.8%</div><div class="fact-label">year-on-year growth in total developer first-sale transaction value</div><div class="verified">Metropolitan market report</div>';
+  marketCards[5].innerHTML='<div class="kicker">JVC / Current competition</div><div class="fact-number">89</div><div class="fact-label">active off-plan projects listed in the community</div><div class="verified">DXBinteract</div>';
+
+  const implication=marketSection.querySelector('.callout p');
+  if(implication) implication.textContent='JVC recorded substantial developer first-sale activity in 2025, but active off-plan supply remains intense. Tasmeer therefore needs to win a measurable share of primary demand through proof, offer clarity, broker activation and sales execution.';
+}
+
+const sourceList=document.querySelector('#sources .source-list');
+if(sourceList&&!document.getElementById('source-jvc-primary-2025')){
+  const source=document.createElement('div');
+  source.className='source-card';
+  source.id='source-jvc-primary-2025';
+  source.innerHTML='<div><h4>Metropolitan Premium Properties - JVC 2025 Market Report</h4><p>Jumeirah Village Circle 2025 report showing 12,074 off-plan primary initial sales by developers worth AED 13.172B, with primary transaction volume up 2.8% and total value up 13.8%.</p></div><a href="https://metropolitan.realestate/wp-content/uploads/2026/01/Jumeirah-Village-Circle-A.pdf" target="_blank" rel="noopener">OPEN ↗</a>';
+  sourceList.prepend(source);
+}
+
 const normalizePunctuation=text=>text.replace(/\s*\u2014\s*/g,' - ');
 const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
 let node;
