@@ -4,7 +4,7 @@ enhancementStyles.href='enhancements.css?v=20260820-1723';
 document.head.appendChild(enhancementStyles);
 
 const desktopNavScript=document.createElement('script');
-desktopNavScript.src='desktop-nav.js?v=20260820-1923';
+desktopNavScript.src='desktop-nav.js?v=20260820-1932';
 document.head.appendChild(desktopNavScript);
 
 document.querySelector('#overview .eyebrow')?.remove();
@@ -73,12 +73,11 @@ if(sources){
     const dxb=document.createElement('div');
     dxb.className='source-card';
     dxb.id='source-dxb';
-    dxb.innerHTML='<div><h4>DXBinteract — Tasmeer Development</h4><p>External developer supply/transaction profile. The supply overview lists 2 projects and 175 units under construction, with 0 delivered projects and 0 delivered units.</p></div><a href="https://dxbinteract.com/top-property-developers-in-dubai/Tasmeer-Development" target="_blank" rel="noopener">OPEN ↗</a>';
+    dxb.innerHTML='<div><h4>DXBinteract - Tasmeer Development</h4><p>External developer supply/transaction profile. The supply overview lists 2 projects and 175 units under construction, with 0 delivered projects and 0 delivered units.</p></div><a href="https://dxbinteract.com/top-property-developers-in-dubai/Tasmeer-Development" target="_blank" rel="noopener">OPEN ↗</a>';
     sourceList.insertBefore(dxb,firstSource);
   }
 }
 
-/* CEO emphasis: response speed, data quality and revenue accountability */
 const crmPriorityCards=[...document.querySelectorAll('#crm .grid.g3 .card')];
 crmPriorityCards.slice(0,2).forEach(card=>card.classList.add('ceo-glow'));
 [...document.querySelectorAll('#kpis .kpi')].forEach(kpi=>{
