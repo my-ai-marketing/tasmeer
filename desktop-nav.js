@@ -10,7 +10,7 @@
   document.head.appendChild(brokerMobileFix);
 
   const languageScript=document.createElement('script');
-  languageScript.src='executive-language.js?v=20260820-2118';
+  languageScript.src='executive-language.js?v=20260820-2129';
   document.head.appendChild(languageScript);
 
   const executionStyle=document.createElement('link');
