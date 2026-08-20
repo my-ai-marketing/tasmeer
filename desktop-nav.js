@@ -9,6 +9,10 @@
   brokerMobileFix.href='mobile-broker-fix.css?v=20260820-2018';
   document.head.appendChild(brokerMobileFix);
 
+  const languageScript=document.createElement('script');
+  languageScript.src='executive-language.js?v=20260820-2118';
+  document.head.appendChild(languageScript);
+
   const executionStyle=document.createElement('link');
   executionStyle.rel='stylesheet';
   executionStyle.href='execution-deep.css?v=20260820-2034';
