@@ -4,7 +4,7 @@ enhancementStyles.href='enhancements.css?v=20260820-1723';
 document.head.appendChild(enhancementStyles);
 
 const desktopNavScript=document.createElement('script');
-desktopNavScript.src='desktop-nav.js?v=20260820-1754';
+desktopNavScript.src='desktop-nav.js?v=20260820-1923';
 document.head.appendChild(desktopNavScript);
 
 document.querySelector('#overview .eyebrow')?.remove();
