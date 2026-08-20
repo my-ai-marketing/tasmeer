@@ -1,0 +1,7 @@
+const sections=[...document.querySelectorAll('main section')];
+const links=[...document.querySelectorAll('.nav a')];
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));}})},{threshold:.35});
+sections.forEach(s=>observer.observe(s));
+function togglePresent(){document.body.classList.toggle('presenting');if(document.body.classList.contains('presenting')){document.documentElement.requestFullscreen?.().catch(()=>{});}else{document.exitFullscreen?.().catch(()=>{});}}
+window.togglePresent=togglePresent;
+document.addEventListener('keydown',e=>{if(!document.body.classList.contains('presenting'))return;const current=sections.findIndex(s=>{const r=s.getBoundingClientRect();return r.top<=window.innerHeight*.4&&r.bottom>=window.innerHeight*.4;});if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();sections[Math.min(sections.length-1,current+1)]?.scrollIntoView({behavior:'smooth'});}if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();sections[Math.max(0,current-1)]?.scrollIntoView({behavior:'smooth'});}if(e.key==='Escape'){document.body.classList.remove('presenting');}});
