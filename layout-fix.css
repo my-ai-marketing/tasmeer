@@ -40,6 +40,75 @@
   .grid{align-items:stretch}
   .card,.pillar,.node,.target,.kpi{height:100%}
 
+  /* Center the desktop executive hero as one presentation composition */
+  #overview.hero{
+    min-height:100vh!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding-top:112px!important;
+    padding-bottom:88px!important;
+    text-align:center;
+  }
+  #overview .hero-grid{
+    grid-template-columns:1fr!important;
+    width:min(100%,1240px)!important;
+    margin:0 auto!important;
+    gap:42px!important;
+    align-items:center!important;
+    justify-items:center!important;
+  }
+  #overview .hero-grid>div:first-child{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  #overview .display{
+    max-width:1120px;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center;
+  }
+  #overview .lede{
+    max-width:920px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center;
+  }
+  #overview .chips{
+    justify-content:center!important;
+    max-width:940px;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  #overview .quote{
+    max-width:980px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding:24px 30px!important;
+    border-left:0!important;
+    border-top:1px solid rgba(129,140,248,.5);
+    text-align:center;
+  }
+  #overview .hero-meta{
+    width:min(100%,1000px);
+    margin:0 auto!important;
+    padding-top:22px!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:0!important;
+    text-align:center;
+  }
+  #overview .hero-meta>div{
+    padding:0 22px;
+  }
+  #overview .hero-meta>div+div{
+    border-left:1px solid rgba(255,255,255,.08);
+  }
+  #overview:before{
+    inset:-38% 8% auto 8%!important;
+    height:760px!important;
+  }
+
   /* Constrain very wide reading measures without breaking the grid */
   .lede{max-width:960px!important}
   .quote{max-width:980px!important}
@@ -70,6 +139,8 @@
   .desktop-chapter{width:212px;min-width:212px!important}
   .desktop-chapter-title{max-width:120px!important}
   .desktop-overlay-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  #overview .hero-meta{grid-template-columns:repeat(2,minmax(0,1fr))!important;row-gap:22px!important}
+  #overview .hero-meta>div:nth-child(3){border-left:0}
 }
 
 /* Large displays: prevent the content from feeling stretched */
