@@ -17,6 +17,11 @@
   style.href='desktop-nav.css?v=20260820-1754';
   document.head.appendChild(style);
 
+  const layoutFix=document.createElement('link');
+  layoutFix.rel='stylesheet';
+  layoutFix.href='layout-fix.css?v=20260820-1759';
+  document.head.appendChild(layoutFix);
+
   const chapter=document.createElement('button');
   chapter.className='desktop-chapter';
   chapter.type='button';
