@@ -11,10 +11,11 @@ if(presence){
   if(lede) lede.innerHTML='Tasmeer has a live brand, enquiry journeys and broker touchpoints, while external supply data shows an early-stage delivery profile. The commercial priority is to reconcile the story, strengthen proof and connect every touchpoint to measurable pipeline.';
   const presenceGrid=presence.querySelector('.grid.g4');
   if(presenceGrid){
+    presenceGrid.classList.remove('g4');
+    presenceGrid.classList.add('g3');
     presenceGrid.innerHTML=`
       <div class="card"><div class="kicker">DXBinteract / supply</div><div class="fact-number">2</div><div class="fact-label">projects listed as under construction</div><div class="verified">External market data</div></div>
       <div class="card ceo-glow"><div class="kicker">DXBinteract / supply</div><div class="fact-number">175</div><div class="fact-label">units listed as under construction</div><div class="verified">External market data</div></div>
-      <div class="card ceo-glow"><div class="kicker">DXBinteract / delivered</div><div class="fact-number">0</div><div class="fact-label">delivered projects and 0 delivered units shown in the supply overview</div><div class="verified">External market data</div></div>
       <div class="card"><div class="kicker">Official website claim</div><div class="fact-number">500+</div><div class="fact-label">apartments stated on Tasmeer Indigo's homepage</div><div class="verified">Company-published</div></div>`;
     const claims=document.createElement('div');
     claims.className='grid g3';
