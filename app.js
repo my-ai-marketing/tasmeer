@@ -5,6 +5,11 @@ document.head.appendChild(enhancementStyles);
 
 document.querySelector('#overview .eyebrow')?.remove();
 
+const preparedMeta=document.querySelector('#overview .hero-meta div:first-child');
+if(preparedMeta) preparedMeta.innerHTML='Prepared by<br><strong>James Ravi</strong>';
+const footerCredit=document.querySelector('footer span:first-child');
+if(footerCredit) footerCredit.innerHTML='Prepared by <strong>James Ravi</strong> · Tasmeer Indigo Marketing & CRM Transformation Strategy';
+
 const presence=document.querySelector('#presence');
 if(presence){
   const lede=presence.querySelector('.lede');
