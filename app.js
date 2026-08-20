@@ -198,6 +198,21 @@ if(sourceList&&!document.getElementById('source-jvc-primary-2025')){
   sourceList.prepend(source);
 }
 
+/* Make the CEO scorecard read like an executive dashboard rather than repeated placeholders. */
+const scorecardSection=document.getElementById('scorecard');
+if(scorecardSection){
+  const scorecardHeading=scorecardSection.querySelector('.display.small');
+  if(scorecardHeading) scorecardHeading.innerHTML='Eight measures should explain <span class="accent">commercial performance.</span>';
+
+  const scorecardLede=scorecardSection.querySelector('.lede');
+  if(scorecardLede) scorecardLede.textContent='Until live CRM and sales data are connected, the cards show the commercial meaning of each measure. Replace the emphasis line with the real monthly value once reporting is live.';
+
+  const emphasis=['Spend','Quality','Intent','Sales','Value','Efficiency','Broker share','Sell-through'];
+  scorecardSection.querySelectorAll('.ceo-metric strong').forEach((el,index)=>{
+    if(emphasis[index]) el.textContent=emphasis[index];
+  });
+}
+
 const normalizePunctuation=text=>text.replace(/\s*\u2014\s*/g,' - ');
 const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
 let node;
