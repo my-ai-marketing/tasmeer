@@ -12,6 +12,9 @@
       .replace(/\bCEO\b/gi,'executive');
   };
 
+  const cpqlInput=document.getElementById('cpqlInput');
+  if(cpqlInput) cpqlInput.setAttribute('min','500');
+
   const scrubNode=root=>{
     if(!root) return;
     if(root.nodeType===Node.TEXT_NODE){
