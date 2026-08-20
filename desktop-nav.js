@@ -1,7 +1,7 @@
 (()=>{
   const mobileFix=document.createElement('link');
   mobileFix.rel='stylesheet';
-  mobileFix.href='mobile-hero-fix.css?v=20260820-2000';
+  mobileFix.href='mobile-hero-fix.css?v=20260820-2124';
   document.head.appendChild(mobileFix);
 
   const brokerMobileFix=document.createElement('link');
