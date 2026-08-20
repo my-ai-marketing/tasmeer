@@ -1,0 +1,428 @@
+/* Execution Model: deeper operating layer */
+#execution .exec-depth{
+  margin-top:28px;
+}
+#execution .exec-depth-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+  padding:24px 0 14px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+#execution .exec-depth-head>div:first-child{max-width:760px}
+#execution .exec-depth-kicker{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:8px;
+}
+#execution .exec-depth-head h3{
+  margin:0;
+  font-family:var(--display);
+  font-stretch:135%;
+  font-size:clamp(28px,3vw,44px);
+  font-weight:520;
+  letter-spacing:-.035em;
+}
+#execution .exec-depth-head p{
+  margin:8px 0 0;
+  max-width:720px;
+  color:#9898ab;
+  font-size:12px;
+  line-height:1.65;
+}
+#execution .exec-depth-badge{
+  flex:0 0 auto;
+  border:1px solid rgba(167,139,250,.28);
+  border-radius:999px;
+  padding:8px 11px;
+  color:#aaa0cf;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  white-space:nowrap;
+}
+
+#execution .exec-module{
+  margin-top:12px;
+  background:linear-gradient(145deg,rgba(129,140,248,.025),transparent 52%),rgba(10,10,26,.48);
+}
+#execution .exec-module summary{
+  min-height:64px;
+}
+#execution .exec-module summary strong{
+  font-weight:700;
+}
+#execution .exec-module-body{
+  padding:22px;
+}
+#execution .exec-module-intro{
+  margin:0 0 20px;
+  max-width:900px;
+  color:#a5a5b7;
+  font-size:12px;
+  line-height:1.65;
+}
+
+/* 12.1 Commercial funnel */
+#execution .funnel-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:10px;
+}
+#execution .funnel-stage{
+  min-width:0;
+  min-height:226px;
+  padding:18px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:16px;
+  background:rgba(255,255,255,.012);
+}
+#execution .funnel-stage>span{
+  display:block;
+  color:var(--accent);
+  font-size:9px;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+#execution .funnel-stage h4{
+  margin:13px 0 7px;
+  font-size:17px;
+  line-height:1.2;
+}
+#execution .funnel-stage>p{
+  margin:0 0 16px;
+  color:#9696a9;
+  font-size:10px;
+  line-height:1.55;
+  min-height:48px;
+}
+#execution .funnel-meta{
+  display:grid;
+  gap:8px;
+  padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.065);
+}
+#execution .funnel-meta div{
+  display:grid;
+  gap:3px;
+}
+#execution .funnel-meta b{
+  font-size:7px;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:#69697d;
+}
+#execution .funnel-meta span{
+  font-size:9px;
+  line-height:1.45;
+  color:#b8b8c7;
+}
+#execution .channel-distinction{
+  margin-top:14px;
+  padding:20px;
+  border:1px solid rgba(167,139,250,.35);
+  border-radius:16px;
+  background:linear-gradient(120deg,rgba(129,140,248,.10),rgba(167,139,250,.035));
+}
+#execution .channel-distinction small{
+  display:block;
+  color:var(--accent);
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  font-weight:700;
+}
+#execution .channel-distinction b{
+  display:block;
+  margin-top:8px;
+  font-size:16px;
+  line-height:1.4;
+}
+#execution .channel-distinction p{
+  margin:7px 0 0;
+  color:#9c9caf;
+  font-size:10px;
+  line-height:1.55;
+}
+
+/* 12.2 CRM commercial spine */
+#execution .crm-spine{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:16px;
+  align-items:stretch;
+}
+#execution .crm-node{
+  position:relative;
+  min-width:0;
+  min-height:150px;
+  padding:17px 15px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:15px;
+  background:rgba(255,255,255,.012);
+}
+#execution .crm-node:not(:last-child)::after{
+  content:'→';
+  position:absolute;
+  right:-14px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#625b86;
+  font-size:14px;
+  z-index:2;
+}
+#execution .crm-node>span{
+  display:block;
+  color:var(--accent);
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+#execution .crm-node b{
+  display:block;
+  margin:11px 0 7px;
+  font-size:14px;
+}
+#execution .crm-node p{
+  margin:0;
+  color:#9292a5;
+  font-size:9px;
+  line-height:1.5;
+}
+#execution .crm-data-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:14px;
+}
+#execution .crm-data-strip span{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;
+  padding:6px 8px;
+  color:#8d8da0;
+  font-size:8px;
+}
+
+/* 12.3 Accountability */
+#execution .accountability-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+#execution .accountability-card{
+  min-width:0;
+  padding:20px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:16px;
+  background:rgba(255,255,255,.012);
+}
+#execution .accountability-card.shared{
+  border-color:rgba(167,139,250,.35);
+  background:linear-gradient(145deg,rgba(129,140,248,.075),transparent 70%),rgba(255,255,255,.012);
+}
+#execution .accountability-card>span{
+  display:block;
+  color:var(--accent);
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  font-weight:700;
+}
+#execution .accountability-card h4{
+  margin:11px 0 12px;
+  font-size:19px;
+}
+#execution .accountability-card ul,
+#execution .ownership-card ul{
+  margin:0;
+  padding-left:17px;
+  color:#9f9fb1;
+  font-size:10px;
+  line-height:1.75;
+}
+#execution .handoff-rule{
+  margin-top:14px;
+  padding:16px 18px;
+  border-left:2px solid var(--accent-2);
+  background:rgba(129,140,248,.035);
+  color:#b3b3c3;
+  font-size:10px;
+  line-height:1.6;
+}
+
+/* 12.4 Team + partner model */
+#execution .ownership-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+#execution .ownership-card{
+  min-width:0;
+  padding:20px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:16px;
+  background:rgba(255,255,255,.012);
+}
+#execution .ownership-card>span{
+  display:inline-flex;
+  border:1px solid rgba(129,140,248,.28);
+  border-radius:999px;
+  padding:5px 7px;
+  color:#a9a0cf;
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+}
+#execution .ownership-card h4{
+  margin:12px 0 11px;
+  font-size:18px;
+}
+#execution .lean-team{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;
+  margin-top:12px;
+}
+#execution .lean-role{
+  min-width:0;
+  padding:14px 12px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+#execution .lean-role b{
+  display:block;
+  font-size:10px;
+  line-height:1.35;
+}
+#execution .lean-role span{
+  display:block;
+  margin-top:5px;
+  color:#77778b;
+  font-size:8px;
+  line-height:1.4;
+}
+
+/* 12.5 Readiness baseline */
+#execution .readiness-list{
+  display:grid;
+  gap:7px;
+}
+#execution .readiness-row{
+  display:grid;
+  grid-template-columns:minmax(150px,1.05fr) minmax(110px,.55fr) minmax(260px,2fr);
+  gap:14px;
+  align-items:center;
+  padding:13px 14px;
+  border:1px solid rgba(255,255,255,.065);
+  border-radius:13px;
+  background:rgba(255,255,255,.01);
+}
+#execution .readiness-row b{
+  font-size:11px;
+}
+#execution .readiness-row p{
+  margin:0;
+  color:#9696a8;
+  font-size:9px;
+  line-height:1.45;
+}
+#execution .readiness-status{
+  justify-self:start;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:999px;
+  padding:5px 7px;
+  font-size:7px;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  white-space:nowrap;
+  color:#9b9bad;
+}
+#execution .readiness-status.established{
+  border-color:rgba(52,211,153,.28);
+  color:#8dd9ba;
+}
+#execution .readiness-status.developing{
+  border-color:rgba(129,140,248,.32);
+  color:#a9a1d4;
+}
+#execution .readiness-status.priority{
+  border-color:rgba(167,139,250,.42);
+  color:#c4b5fd;
+  box-shadow:0 0 18px rgba(129,140,248,.08);
+}
+
+@media(max-width:1050px){
+  #execution .funnel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #execution .funnel-stage:last-child{grid-column:1/-1}
+  #execution .crm-spine{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #execution .crm-node::after{display:none}
+  #execution .lean-team{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media(max-width:700px){
+  #execution .exec-depth{margin-top:22px}
+  #execution .exec-depth-head{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:12px;
+    padding-top:20px;
+  }
+  #execution .exec-depth-head h3{font-size:29px}
+  #execution .exec-depth-head p{font-size:10px}
+  #execution .exec-module summary{
+    min-height:58px;
+    padding:15px 16px!important;
+    line-height:1.35;
+  }
+  #execution .exec-module-body{padding:14px}
+  #execution .exec-module-intro{font-size:10px;margin-bottom:14px}
+
+  #execution .funnel-grid{grid-template-columns:1fr;gap:8px}
+  #execution .funnel-stage:last-child{grid-column:auto}
+  #execution .funnel-stage{
+    min-height:0;
+    padding:16px;
+  }
+  #execution .funnel-stage>p{min-height:0}
+  #execution .funnel-meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  #execution .channel-distinction{padding:16px}
+
+  #execution .crm-spine{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  #execution .crm-node{min-height:135px;padding:14px 12px}
+  #execution .crm-node b{font-size:13px}
+  #execution .crm-node p{font-size:8px}
+
+  #execution .accountability-grid,
+  #execution .ownership-grid{grid-template-columns:1fr;gap:8px}
+  #execution .accountability-card,
+  #execution .ownership-card{padding:17px}
+  #execution .lean-team{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+  #execution .lean-role:last-child{grid-column:1/-1}
+
+  #execution .readiness-row{
+    grid-template-columns:1fr auto;
+    gap:8px 10px;
+    padding:12px;
+  }
+  #execution .readiness-row p{
+    grid-column:1/-1;
+    font-size:8px;
+  }
+  #execution .readiness-row b{font-size:10px}
+}
+
+@media(max-width:390px){
+  #execution .crm-spine{grid-template-columns:1fr 1fr}
+  #execution .crm-node{min-height:128px}
+  #execution .funnel-meta{grid-template-columns:1fr}
+  #execution .lean-team{grid-template-columns:1fr 1fr}
+}
+
+@media print{
+  #execution .exec-module{break-inside:avoid}
+  #execution .exec-module:not([open])>*:not(summary){display:block!important}
+}
