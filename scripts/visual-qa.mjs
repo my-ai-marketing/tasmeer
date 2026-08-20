@@ -42,7 +42,7 @@ for (const vp of viewports) {
   await page.goto('http://127.0.0.1:4173/', {waitUntil:'networkidle'});
   await page.waitForTimeout(1800);
 
-  const data = await page.evaluate((expected, mobile)=>{
+  const data = await page.evaluate(({expected,mobile})=>{
     const visible = el => {
       const cs=getComputedStyle(el);
       const r=el.getBoundingClientRect();
@@ -77,7 +77,7 @@ for (const vp of viewports) {
       mobileTopVisible:mobileTop?visible(mobileTop):false,
       expectedMobile:mobile
     };
-  }, expected, vp.mobile);
+  }, {expected,mobile:vp.mobile});
 
   const errors=[];
   if(data.visibleMainSections.join('|')!==expected.map(x=>x[0]).join('|')) errors.push(`Visible main section order mismatch: ${data.visibleMainSections.join(', ')}`);
