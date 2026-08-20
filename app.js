@@ -1,100 +1,16 @@
-const enhancementStyles=document.createElement('link');
-enhancementStyles.rel='stylesheet';
-enhancementStyles.href='enhancements.css?v=20260820-1723';
-document.head.appendChild(enhancementStyles);
-
-const desktopNavScript=document.createElement('script');
-desktopNavScript.src='desktop-nav.js?v=20260820-1932';
-document.head.appendChild(desktopNavScript);
-
-document.querySelector('#overview .eyebrow')?.remove();
-
-const preparedMeta=document.querySelector('#overview .hero-meta div:first-child');
-if(preparedMeta) preparedMeta.innerHTML='Prepared by<br><strong>James Ravi</strong>';
-const footerCredit=document.querySelector('footer span:first-child');
-if(footerCredit) footerCredit.innerHTML='Prepared by <strong>James Ravi</strong> · Tasmeer Indigo Marketing & CRM Transformation Strategy';
-
-const presence=document.querySelector('#presence');
-if(presence){
-  const lede=presence.querySelector('.lede');
-  if(lede) lede.innerHTML='Tasmeer has a live brand, enquiry journeys and broker touchpoints, while external supply data shows an early-stage delivery profile. The commercial priority is to reconcile the story, strengthen proof and connect every touchpoint to measurable pipeline.';
-  const presenceGrid=presence.querySelector('.grid.g4');
-  if(presenceGrid){
-    presenceGrid.classList.remove('g4');
-    presenceGrid.classList.add('g3');
-    presenceGrid.innerHTML=`
-      <div class="card"><div class="kicker">DXBinteract / supply</div><div class="fact-number">2</div><div class="fact-label">projects listed as under construction</div><div class="verified">External market data</div></div>
-      <div class="card ceo-glow"><div class="kicker">DXBinteract / supply</div><div class="fact-number">175</div><div class="fact-label">units listed as under construction</div><div class="verified">External market data</div></div>
-      <div class="card"><div class="kicker">Official website claim</div><div class="fact-number">500+</div><div class="fact-label">apartments stated on Tasmeer Indigo's homepage</div><div class="verified">Company-published</div></div>`;
-    const claims=document.createElement('div');
-    claims.className='grid g3';
-    claims.style.marginTop='16px';
-    claims.innerHTML=`
-      <div class="card"><div class="kicker">Official website claim</div><div class="fact-number">25+</div><div class="fact-label">years of industry experience stated publicly</div><div class="verified">Company-published</div></div>
-      <div class="card"><div class="kicker">Official website claim</div><div class="fact-number">700K</div><div class="fact-label">sqft building area stated on the homepage</div><div class="verified">Company-published</div></div>
-      <div class="card"><div class="kicker">Owned channels</div><div class="fact-number">Live</div><div class="fact-label">website, LinkedIn, YouTube and broker-registration touchpoints</div><div class="verified">Publicly observable</div></div>`;
-    presenceGrid.insertAdjacentElement('afterend',claims);
-    const reconcile=document.createElement('div');
-    reconcile.className='warning ceo-glow';
-    reconcile.innerHTML='<strong>Data reconciliation:</strong> the cited DXBinteract Tasmeer Development profile shows 2 under-construction projects, 175 under-construction units and 0 delivered projects/units in its supply overview. Tasmeer Indigo’s own website separately states 500+ apartments and 700K sqft building area. These sources may use different scopes or definitions; the first operational task should be to reconcile them into one approved project master dataset for the website, CRM, portals, broker kits and reporting.';
-    claims.insertAdjacentElement('afterend',reconcile);
-  }
-  presence.querySelector('.note-badge')?.remove();
-  presence.querySelector('.score-wrap + .warning')?.remove();
-}
-
-const findings=[...document.querySelectorAll('#gaps .finding')];
-if(findings[0]){
-  const h=findings[0].querySelector('h3');
-  const p=findings[0].querySelector('p');
-  if(h) h.textContent='Public portfolio data needs one source of truth';
-  if(p) p.textContent='Tasmeer’s official website and DXBinteract present different portfolio-scale views. Before scaling campaigns, create one approved project master dataset covering project status, registered units, marketed inventory, construction progress, payment plan, handover and claims.';
-}
-if(findings[2]){
-  const h=findings[2].querySelector('h3');
-  const p=findings[2].querySelector('p');
-  if(h) h.textContent='Trust proof matters while delivery history is being established';
-  if(p) p.textContent='DXBinteract’s supply overview shows 0 delivered projects/units for this developer profile. Investor marketing should therefore lean heavily on registered project facts, construction progress, payment and escrow clarity, management credibility, site evidence and transparent availability—not an assumed delivered track record.';
-}
-
-const positioningCallout=document.querySelector('#positioning .callout p');
-if(positioningCallout) positioningCallout.textContent='With DXBinteract showing no delivered supply on the cited developer profile, proof before promotion becomes even more important: construction progress, registered project data, management visibility, payment and escrow clarity, transparent availability and buyer education should carry more weight than premium renders alone.';
-
-const roadmapItems=document.querySelectorAll('#roadmap .phase:first-of-type li');
-if(roadmapItems[1]) roadmapItems[1].textContent='Reconcile official website portfolio claims against DLD/DXBinteract supply data and create one project master dataset: registered units, marketed inventory, price, payment plan, construction status, handover and approved claims.';
-
-const sources=document.querySelector('#sources');
-if(sources){
-  const lede=sources.querySelector('.lede');
-  if(lede) lede.textContent='Public audit snapshot refreshed 20 August 2026 with DXBinteract supply context. Internal spend, CPL, lead volumes, sell-through, conversion rates and sales response performance still require company access.';
-  const firstSource=sources.querySelector('.source-card');
-  const sourceList=firstSource?.parentElement;
-  if(sourceList && !document.querySelector('#source-dxb')){
-    const dxb=document.createElement('div');
-    dxb.className='source-card';
-    dxb.id='source-dxb';
-    dxb.innerHTML='<div><h4>DXBinteract - Tasmeer Development</h4><p>External developer supply/transaction profile. The supply overview lists 2 projects and 175 units under construction, with 0 delivered projects and 0 delivered units.</p></div><a href="https://dxbinteract.com/top-property-developers-in-dubai/Tasmeer-Development" target="_blank" rel="noopener">OPEN ↗</a>';
-    sourceList.insertBefore(dxb,firstSource);
-  }
-}
-
-const crmPriorityCards=[...document.querySelectorAll('#crm .grid.g3 .card')];
-crmPriorityCards.slice(0,2).forEach(card=>card.classList.add('ceo-glow'));
-[...document.querySelectorAll('#kpis .kpi')].forEach(kpi=>{
-  const metric=kpi.querySelector('strong')?.textContent.trim();
-  if(metric==='CAC'||metric==='ROAS') kpi.classList.add('ceo-glow');
-});
-[...document.querySelectorAll('#kpis .target')].forEach(target=>{
-  if(target.querySelector('b')?.textContent.trim()==='100%') target.classList.add('ceo-glow');
-});
-document.querySelector('#kpis .callout')?.classList.add('ceo-glow');
-
-const sections=[...document.querySelectorAll('main section')];
+const sections=[...document.querySelectorAll('main > section[id]')];
 const desktopLinks=[...document.querySelectorAll('.nav a')];
 const mobileTop=document.querySelector('.mobile-top');
 let mobileDrawer=null;
 let mobileSectionTitle=null;
 let mobileProgressBar=null;
+
+const money=value=>new Intl.NumberFormat('en-AE',{style:'currency',currency:'AED',maximumFractionDigits:0}).format(value).replace('AED','AED ');
+const moneyCompact=value=>{
+  if(value>=1000000) return `AED ${(value/1000000).toFixed(value>=10000000?1:2)}M`;
+  if(value>=1000) return `AED ${(value/1000).toFixed(0)}K`;
+  return money(value);
+};
 
 if(mobileTop){
   mobileTop.innerHTML=`
@@ -111,7 +27,7 @@ if(mobileTop){
   mobileDrawer.className='mobile-drawer';
   mobileDrawer.setAttribute('aria-hidden','true');
   mobileDrawer.innerHTML=`
-    <div class="mobile-drawer-head"><div><div class="section-label" style="margin:0 0 6px">Navigate strategy</div><div class="mobile-drawer-title">Choose a section</div></div><button class="mobile-close" type="button" aria-label="Close navigation">×</button></div>
+    <div class="mobile-drawer-head"><div><div class="section-label" style="margin:0 0 6px">Navigate plan</div><div class="mobile-drawer-title">Choose a section</div></div><button class="mobile-close" type="button" aria-label="Close navigation">×</button></div>
     <nav class="mobile-drawer-nav" aria-label="Mobile section navigation">${desktopLinks.map(a=>`<a href="${a.getAttribute('href')}">${a.textContent}</a>`).join('')}</nav>
     <div class="mobile-drawer-actions"><button class="btn" type="button" data-mobile-present>Present</button><button class="btn" type="button" data-mobile-pdf>Export PDF</button></div>`;
   document.body.appendChild(mobileDrawer);
@@ -136,7 +52,7 @@ const labelByHref=new Map(desktopLinks.map(a=>[a.getAttribute('href'),a.textCont
 sections.forEach((section,index)=>{
   if(index>=sections.length-1||section.querySelector('.mobile-next')) return;
   const next=sections[index+1];
-  const nextLabel=labelByHref.get('#'+next.id)||`Next section`;
+  const nextLabel=labelByHref.get('#'+next.id)||'Next section';
   const nextLink=document.createElement('a');
   nextLink.className='mobile-next';
   nextLink.href='#'+next.id;
@@ -151,10 +67,13 @@ function activateSection(section){
   if(mobileSectionTitle) mobileSectionTitle.textContent=labelByHref.get(href)||section.id;
 }
 
-const observer=new IntersectionObserver(entries=>{
-  entries.filter(entry=>entry.isIntersecting).forEach(entry=>activateSection(entry.target));
-},{rootMargin:'-18% 0px -70% 0px',threshold:0});
-sections.forEach(s=>observer.observe(s));
+if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{
+    const visible=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio);
+    if(visible[0]) activateSection(visible[0].target);
+  },{rootMargin:'-18% 0px -68% 0px',threshold:[0,.05,.2]});
+  sections.forEach(s=>observer.observe(s));
+}
 if(sections[0]) activateSection(sections[0]);
 
 let scrollTick=false;
@@ -181,16 +100,82 @@ function togglePresent(){
 }
 window.togglePresent=togglePresent;
 
+document.addEventListener('fullscreenchange',()=>{
+  if(!document.fullscreenElement) document.body.classList.remove('presenting');
+});
+
 document.addEventListener('keydown',e=>{
   if(!document.body.classList.contains('presenting')||document.body.classList.contains('mobile-nav-open')) return;
-  const current=sections.findIndex(s=>{const r=s.getBoundingClientRect();return r.top<=window.innerHeight*.4&&r.bottom>=window.innerHeight*.4;});
+  const current=sections.findIndex(s=>{const r=s.getBoundingClientRect();return r.top<=window.innerHeight*.42&&r.bottom>=window.innerHeight*.42;});
   if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){
     e.preventDefault();
-    sections[Math.min(sections.length-1,current+1)]?.scrollIntoView({behavior:'smooth'});
+    sections[Math.min(sections.length-1,Math.max(0,current)+1)]?.scrollIntoView({behavior:'smooth'});
   }
   if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){
     e.preventDefault();
     sections[Math.max(0,current-1)]?.scrollIntoView({behavior:'smooth'});
   }
-  if(e.key==='Escape') document.body.classList.remove('presenting');
 });
+
+const budgetInput=document.getElementById('budgetInput');
+const cpqlInput=document.getElementById('cpqlInput');
+const qToViewingInput=document.getElementById('qToViewingInput');
+const viewToBookingInput=document.getElementById('viewToBookingInput');
+const avgValueInput=document.getElementById('avgValueInput');
+
+function updateProjection(){
+  if(!budgetInput||!cpqlInput||!qToViewingInput||!viewToBookingInput||!avgValueInput) return;
+  const budget=Number(budgetInput.value);
+  const cpql=Number(cpqlInput.value);
+  const qToViewing=Number(qToViewingInput.value)/100;
+  const viewToBooking=Number(viewToBookingInput.value)/100;
+  const avgValue=Number(avgValueInput.value);
+  const qualified=budget/cpql;
+  const viewings=qualified*qToViewing;
+  const bookings=viewings*viewToBooking;
+  const bookedValue=bookings*avgValue;
+
+  document.getElementById('budgetLabel').textContent=money(budget);
+  document.getElementById('cpqlLabel').textContent=money(cpql);
+  document.getElementById('qToViewingLabel').textContent=`${Math.round(qToViewing*100)}%`;
+  document.getElementById('viewToBookingLabel').textContent=`${Math.round(viewToBooking*100)}%`;
+  document.getElementById('avgValueLabel').textContent=moneyCompact(avgValue);
+  document.getElementById('qualifiedOutput').textContent=qualified.toFixed(0);
+  document.getElementById('viewingOutput').textContent=viewings.toFixed(0);
+  document.getElementById('bookingOutput').textContent=bookings.toFixed(1);
+  document.getElementById('salesValueOutput').textContent=moneyCompact(bookedValue);
+
+  document.querySelectorAll('.scenario-card').forEach(card=>card.classList.toggle('active',Number(card.dataset.budget)===budget));
+}
+[budgetInput,cpqlInput,qToViewingInput,viewToBookingInput,avgValueInput].filter(Boolean).forEach(input=>input.addEventListener('input',updateProjection));
+document.querySelectorAll('.scenario-card').forEach(card=>card.addEventListener('click',()=>{
+  if(!budgetInput) return;
+  budgetInput.value=card.dataset.budget;
+  updateProjection();
+  document.getElementById('projection')?.scrollIntoView({behavior:'smooth',block:'start'});
+}));
+updateProjection();
+
+const inventoryInput=document.getElementById('inventoryInput');
+const monthlyBookingsInput=document.getElementById('monthlyBookingsInput');
+const inventoryValueInput=document.getElementById('inventoryValueInput');
+function updateSellThrough(){
+  if(!inventoryInput||!monthlyBookingsInput||!inventoryValueInput) return;
+  const units=Math.max(1,Number(inventoryInput.value)||1);
+  const monthly=Math.max(1,Number(monthlyBookingsInput.value)||1);
+  const avg=Math.max(0,Number(inventoryValueInput.value)||0);
+  document.getElementById('monthsOutput').textContent=`${(units/monthly).toFixed(1)} months`;
+  document.getElementById('inventoryValueOutput').textContent=moneyCompact(units*avg);
+  document.getElementById('monthlyValueOutput').textContent=moneyCompact(monthly*avg);
+}
+[inventoryInput,monthlyBookingsInput,inventoryValueInput].filter(Boolean).forEach(input=>input.addEventListener('input',updateSellThrough));
+updateSellThrough();
+
+const normalizePunctuation=text=>text.replace(/\s*\u2014\s*/g,' - ');
+const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+let node;
+while((node=walker.nextNode())){
+  if(node.nodeValue.includes('\u2014')) node.nodeValue=normalizePunctuation(node.nodeValue);
+}
+document.title=normalizePunctuation(document.title);
+document.querySelectorAll('meta[content]').forEach(meta=>meta.setAttribute('content',normalizePunctuation(meta.getAttribute('content')||'')));
