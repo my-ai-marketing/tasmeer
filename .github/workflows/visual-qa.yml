@@ -1,0 +1,44 @@
+name: Visual QA
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.54.2
+          npx playwright install --with-deps chromium
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 >/tmp/tasmeer-http.log 2>&1 &
+          sleep 2
+      - name: Run responsive QA
+        id: qa
+        continue-on-error: true
+        run: node scripts/visual-qa.mjs
+      - name: Upload QA artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-qa
+          path: qa-artifacts/
+          retention-days: 3
+      - name: Fail if QA failed
+        if: steps.qa.outcome == 'failure'
+        run: exit 1
