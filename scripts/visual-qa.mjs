@@ -1,4 +1,4 @@
-import { chromium } from 'playwright';
+import { chromium } from 'playwright-core';
 import fs from 'node:fs/promises';
 
 const expected = [
@@ -28,7 +28,9 @@ const viewports = [
 ];
 
 await fs.mkdir('qa-artifacts', {recursive:true});
-const browser = await chromium.launch({headless:true});
+const executablePath=process.env.CHROME_BIN;
+if(!executablePath) throw new Error('CHROME_BIN is not set');
+const browser = await chromium.launch({headless:true,executablePath,args:['--no-sandbox']});
 const report = {generatedAt:new Date().toISOString(), expected:expected.map(x=>x[0]), viewports:{}};
 let failed = false;
 
