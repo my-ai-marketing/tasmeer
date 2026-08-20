@@ -1,4 +1,9 @@
 (()=>{
+  const mobileFix=document.createElement('link');
+  mobileFix.rel='stylesheet';
+  mobileFix.href='mobile-hero-fix.css?v=20260820-2000';
+  document.head.appendChild(mobileFix);
+
   const mq=window.matchMedia('(min-width:1051px)');
   const sections=[...document.querySelectorAll('main > section[id]')];
   const sourceLinks=[...document.querySelectorAll('.nav a')];
