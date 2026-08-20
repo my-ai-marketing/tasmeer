@@ -9,11 +9,20 @@
 - https://www.linkedin.com/company/tasmeer-indigo-properties
 - https://www.youtube.com/@TasmeerIndigoProperties
 
+## External market / registry context
+- https://dxbinteract.com/top-property-developers-in-dubai/Tasmeer-Development
+  - The Tasmeer Development supply overview on the cited DXBinteract profile lists 2 projects and 175 units under construction.
+  - The same supply overview lists 0 delivered projects and 0 delivered units.
+  - These figures are treated as external market/registry context and are shown separately from Tasmeer Indigo's own marketing claims, including 500+ apartments and 700K sqft building area stated on its official website.
+
 ## Evidence discipline
-The dashboard deliberately separates three categories:
-1. Publicly verifiable current-state facts.
-2. Directional professional assessment.
-3. Future-state recommendations and targets.
+The dashboard deliberately separates four categories:
+1. Publicly verifiable company claims.
+2. External market / registry context.
+3. Directional professional assessment.
+4. Future-state recommendations and targets.
+
+Where company marketing claims and third-party supply data use different scopes or definitions, the dashboard flags the difference rather than assuming one is incorrect. A project master dataset should reconcile inventory, project status, unit counts, construction status and approved claims before investor or broker campaigns scale.
 
 Internal metrics such as media spend, CPL, lead volume, conversion rate, response time, booking rate and ROAS cannot be verified without company access.
 
