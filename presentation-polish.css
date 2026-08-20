@@ -42,7 +42,8 @@
   #team .org-level{display:grid!important;grid-template-columns:1fr!important;width:100%!important}
   #team .role{width:100%!important;min-width:0!important}
 
-  /* Avoid orphan cards in the commercial sections. */
+  /* Avoid orphan cards and oversized figures in narrow commercial grids. */
+  .ceo-plan-card:not(.recommended) .budget{font-size:28px!important;white-space:nowrap!important}
   .projection-card.base{grid-column:1/-1!important;grid-row:1!important}
   #risks .ceo-risk:last-child{grid-column:1/-1!important}
   #execution .execution-link:last-child{grid-column:1/-1!important}
@@ -55,4 +56,5 @@
   #presence .presence-facts>.card{padding:14px!important;min-height:142px}
   #presence .presence-facts .fact-number{font-size:31px!important}
   #presence .presence-facts .fact-label{font-size:9px!important}
+  .ceo-plan-card:not(.recommended) .budget{font-size:26px!important}
 }
