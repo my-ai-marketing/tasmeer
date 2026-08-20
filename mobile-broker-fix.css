@@ -1,0 +1,97 @@
+/* Mobile broker section repair */
+@media(max-width:700px){
+  #brokers .broker-flow{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    width:100%!important;
+    margin-top:28px!important;
+  }
+
+  #brokers .broker-stage{
+    min-width:0!important;
+    min-height:190px!important;
+    padding:18px 16px!important;
+    border-radius:18px!important;
+    overflow:hidden!important;
+  }
+  #brokers .broker-stage>span{
+    font-size:10px!important;
+  }
+  #brokers .broker-stage>b{
+    font-size:clamp(24px,7vw,31px)!important;
+    line-height:1.02!important;
+    letter-spacing:-.04em!important;
+    margin:16px 0 12px!important;
+    overflow-wrap:anywhere!important;
+  }
+  #brokers .broker-stage p{
+    font-size:10px!important;
+    line-height:1.55!important;
+    margin:0!important;
+  }
+
+  #brokers .broker-score{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    width:100%!important;
+    margin-top:22px!important;
+  }
+  #brokers .broker-score>.card{
+    min-width:0!important;
+    min-height:158px!important;
+    height:auto!important;
+    padding:17px 14px!important;
+    border-radius:18px!important;
+    overflow:hidden!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+  }
+  #brokers .broker-score .kicker{
+    margin-bottom:12px!important;
+    font-size:8px!important;
+    line-height:1.2!important;
+    letter-spacing:.12em!important;
+  }
+  #brokers .broker-score .fact-number{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0 0 10px!important;
+    font-size:clamp(22px,6.4vw,30px)!important;
+    line-height:1.02!important;
+    letter-spacing:-.045em!important;
+    overflow-wrap:anywhere!important;
+    word-break:normal!important;
+  }
+  #brokers .broker-score .fact-label{
+    font-size:9px!important;
+    line-height:1.45!important;
+    max-width:100%!important;
+  }
+}
+
+@media(max-width:390px){
+  #brokers .broker-flow,
+  #brokers .broker-score{
+    gap:8px!important;
+  }
+  #brokers .broker-stage{
+    min-height:178px!important;
+    padding:16px 13px!important;
+  }
+  #brokers .broker-stage>b{
+    font-size:23px!important;
+  }
+  #brokers .broker-score>.card{
+    min-height:148px!important;
+    padding:15px 11px!important;
+  }
+  #brokers .broker-score .fact-number{
+    font-size:21px!important;
+  }
+  #brokers .broker-score .fact-label{
+    font-size:8px!important;
+  }
+}
