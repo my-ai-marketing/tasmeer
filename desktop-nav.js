@@ -9,6 +9,15 @@
   brokerMobileFix.href='mobile-broker-fix.css?v=20260820-2018';
   document.head.appendChild(brokerMobileFix);
 
+  const executionStyle=document.createElement('link');
+  executionStyle.rel='stylesheet';
+  executionStyle.href='execution-deep.css?v=20260820-2034';
+  document.head.appendChild(executionStyle);
+
+  const executionScript=document.createElement('script');
+  executionScript.src='execution-deep.js?v=20260820-2034';
+  document.head.appendChild(executionScript);
+
   const mq=window.matchMedia('(min-width:1051px)');
   const sections=[...document.querySelectorAll('main > section[id]')];
   const sourceLinks=[...document.querySelectorAll('.nav a')];
