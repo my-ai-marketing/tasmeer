@@ -100,4 +100,13 @@
   });
 
   mq.addEventListener?.('change',e=>{if(!e.matches) setOpen(false);});
+
+  const normalizePunctuation=text=>text.replace(/\s*\u2014\s*/g,' - ');
+  const textWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  let textNode;
+  while((textNode=textWalker.nextNode())){
+    if(textNode.nodeValue.includes('\u2014')) textNode.nodeValue=normalizePunctuation(textNode.nodeValue);
+  }
+  document.title=normalizePunctuation(document.title);
+  document.querySelectorAll('meta[content]').forEach(meta=>meta.setAttribute('content',normalizePunctuation(meta.getAttribute('content')||'')));
 })();
