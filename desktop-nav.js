@@ -4,6 +4,11 @@
   mobileFix.href='mobile-hero-fix.css?v=20260820-2000';
   document.head.appendChild(mobileFix);
 
+  const brokerMobileFix=document.createElement('link');
+  brokerMobileFix.rel='stylesheet';
+  brokerMobileFix.href='mobile-broker-fix.css?v=20260820-2018';
+  document.head.appendChild(brokerMobileFix);
+
   const mq=window.matchMedia('(min-width:1051px)');
   const sections=[...document.querySelectorAll('main > section[id]')];
   const sourceLinks=[...document.querySelectorAll('.nav a')];
